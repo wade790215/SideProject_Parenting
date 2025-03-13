@@ -135,6 +135,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.wade.uiframework": {
+      "version": "git+https://github.com/wade790215/MyUnityTool.git?path=Assets/MyPackages/UIFramework",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d3b97149311c6d24e1f890f94a3db5cf0ad4d0e4"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
