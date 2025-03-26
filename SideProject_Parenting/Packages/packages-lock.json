@@ -7,6 +7,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.device-simulator.devices": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.editorcoroutines": {
       "version": "1.0.0",
       "depth": 1,
@@ -140,7 +147,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d3b97149311c6d24e1f890f94a3db5cf0ad4d0e4"
+      "hash": "9e730d3915cf9d751e8712ea6442cd6a61d1ec30"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
