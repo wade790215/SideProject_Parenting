@@ -11,6 +11,15 @@ namespace Parenting
         {
             uiPath = "Prefab/UIMain";
         }
+
+        protected override void Awake(GameObject go)
+        {
+            UIMain uiMain = go.GetComponent<UIMain>();
+            if (uiMain != null)
+            {
+                uiMain.Init();
+            }
+        }
     }
 }
 
