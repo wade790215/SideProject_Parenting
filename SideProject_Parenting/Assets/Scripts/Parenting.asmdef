@@ -1,0 +1,17 @@
+{
+    "name": "Parenting",
+    "rootNamespace": "Parenting",
+    "references": [
+        "GUID:a1f09a3efda2d3b4a9d87eb37f3cd226",
+        "GUID:a9b0b9e3f27ba06418f530ec2fa45713"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

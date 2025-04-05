@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downBarButtonPrefab: {fileID: 4667376244769187527, guid: 066fed40d6c548b4db1aeaf488c9fdf8, type: 3}
   downBarButtonParent: {fileID: 7620993305794978508}
+  configList: {fileID: 11400000, guid: 23a0c6f2f0a38d4419a541b8d440b248, type: 2}
 --- !u!1 &179134
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
