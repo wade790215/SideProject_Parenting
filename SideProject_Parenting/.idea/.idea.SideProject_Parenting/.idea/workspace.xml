@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b68f10f4-7968-4c6f-ad99-c574da9e2929" name="Changes" comment="" />
+    <list default="true" id="b68f10f4-7968-4c6f-ad99-c574da9e2929" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SideProject_Parenting/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SideProject_Parenting/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefab/UIMain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefab/UIMain.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Parenting.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Parenting.asmdef" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +36,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d26551307ee24906965335845380d4a12d400/87/70c62511/GUILayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DownBarButtonConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DownBarButtonConfigList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TMPDynamicFontCreator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIMainPage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.wade.uiframework@9e730d3915/Runtime/UIBind.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.wade.uiframework@9e730d3915/Runtime/UIPage.cs" root0="SKIP_HIGHLIGHTING" />
