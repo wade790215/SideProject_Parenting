@@ -2,45 +2,59 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.TextCore.LowLevel;
-using AtlasPopulationMode = TMPro.AtlasPopulationMode;
 
-public class TMPDynamicFontCreator : MonoBehaviour
+namespace Parenting
 {
-    [MenuItem("Tools/TMP/建立中文字型 Font Asset (動態)")]
-    public static void CreateDynamicFontAsset()
+    public class TMPChineseFontCreator : MonoBehaviour
     {
-        string fontPath = EditorUtility.OpenFilePanel("選擇中文字型（例如 Noto Sans TC）", Application.dataPath, "ttf");
-
-        if (string.IsNullOrEmpty(fontPath)) return;
-
-        Font font = new Font(fontPath);
-        if (font == null)
+        [MenuItem("Tools/TMP/建立中文字 TMP FontAsset (靜態/含圖集)")]
+        public static void CreateTMPChineseFontAsset()
         {
-            Debug.LogError("無法載入字型檔");
-            return;
-        }
+            string fontPath = EditorUtility.OpenFilePanel("選擇中文字型（.ttf）", Application.dataPath, "ttf");
+            if (string.IsNullOrEmpty(fontPath)) return;
 
-        // 創建 TMP Font Asset
-        TMP_FontAsset fontAsset = TMP_FontAsset.CreateFontAsset(font, 90, 9, GlyphRenderMode.SDFAA, 1024, 1024, AtlasPopulationMode.Dynamic);
+            // 載入系統字型
+            Font systemFont = new Font(fontPath);
+            if (systemFont == null)
+            {
+                Debug.LogError("無法載入字型檔案");
+                return;
+            }
 
-        Material fontMaterial = new Material(Shader.Find("TextMeshPro/Distance Field"));
-        fontMaterial.mainTexture = fontAsset.atlasTextures[0];
-        fontAsset.material = fontMaterial;
+            // 建立 TMP FontAsset（靜態）
+            TMP_FontAsset fontAsset = TMP_FontAsset.CreateFontAsset(
+                systemFont,
+                90,
+                9,
+                GlyphRenderMode.SDFAA,
+                1024,
+                1024,
+                AtlasPopulationMode.Static
+            );
 
-        if (fontAsset == null)
-        {
-            Debug.LogError("建立 Font Asset 失敗");
-            return;
-        }
+            if (fontAsset == null)
+            {
+                Debug.LogError("建立 Font Asset 失敗");
+                return;
+            }
 
-        // 儲存
-        string savePath = EditorUtility.SaveFilePanelInProject("儲存 TMP 字型", "TMP_ChineseFont", "asset", "儲存路徑");
-        if (!string.IsNullOrEmpty(savePath))
-        {
+            // 儲存路徑選擇
+            string savePath = EditorUtility.SaveFilePanelInProject("儲存 TMP 字型資源", "TMP_ChineseFont", "asset", "選擇儲存位置");
+            if (string.IsNullOrEmpty(savePath)) return;
+
+            // 儲存 FontAsset、材質與貼圖為同一資源包
             AssetDatabase.CreateAsset(fontAsset, savePath);
+
+            if (fontAsset.material != null)
+                AssetDatabase.AddObjectToAsset(fontAsset.material, fontAsset);
+
+            if (fontAsset.atlasTexture != null)
+                AssetDatabase.AddObjectToAsset(fontAsset.atlasTexture, fontAsset);
+
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            Debug.Log("✅ 動態 TMP Font Asset 建立成功: " + savePath);
+
+            Debug.Log($"✅ 字型建立成功：{savePath}");
         }
     }
 }
