@@ -7,13 +7,12 @@ namespace Parenting
 {
     public class TMPChineseFontCreator : MonoBehaviour
     {
-        [MenuItem("Tools/TMP/建立中文字 TMP FontAsset (靜態/含圖集)")]
+        [MenuItem("Tools/TMP/建立中文字 TMP FontAsset")]
         public static void CreateTMPChineseFontAsset()
         {
             string fontPath = EditorUtility.OpenFilePanel("選擇中文字型（.ttf）", Application.dataPath, "ttf");
             if (string.IsNullOrEmpty(fontPath)) return;
 
-            // 載入系統字型
             Font systemFont = new Font(fontPath);
             if (systemFont == null)
             {
@@ -21,7 +20,6 @@ namespace Parenting
                 return;
             }
 
-            // 建立 TMP FontAsset（靜態）
             TMP_FontAsset fontAsset = TMP_FontAsset.CreateFontAsset(
                 systemFont,
                 90,
@@ -38,11 +36,9 @@ namespace Parenting
                 return;
             }
 
-            // 儲存路徑選擇
             string savePath = EditorUtility.SaveFilePanelInProject("儲存 TMP 字型資源", "TMP_ChineseFont", "asset", "選擇儲存位置");
             if (string.IsNullOrEmpty(savePath)) return;
 
-            // 儲存 FontAsset、材質與貼圖為同一資源包
             AssetDatabase.CreateAsset(fontAsset, savePath);
 
             if (fontAsset.material != null)
