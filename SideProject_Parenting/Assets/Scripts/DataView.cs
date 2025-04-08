@@ -11,8 +11,6 @@ namespace Parenting
         [SerializeField] private Button leftButton;
         [SerializeField] private Button rightButton;
     
-        private Action _onLeftButtonClick;
-        private Action _onRightButtonClick;
         private DateTime _currentDate;
 
         private static readonly string[] Weekdays =
@@ -28,32 +26,14 @@ namespace Parenting
     
         private void OnEnable()
         {
-            leftButton.onClick.AddListener(() =>
-            {
-                _onLeftButtonClick?.Invoke();
-                OnClickLeft();
-            });
-            rightButton.onClick.AddListener(() =>
-            {
-                _onRightButtonClick?.Invoke();
-                OnClickRight();
-            });
+            leftButton.onClick.AddListener(OnClickLeft);
+            rightButton.onClick.AddListener(OnClickRight);
         }
     
         private void OnDisable()
         {
             leftButton.onClick.RemoveAllListeners();
             rightButton.onClick.RemoveAllListeners();
-        }
-    
-        public void SetLeftButtonListener(Action action)
-        {
-            _onLeftButtonClick = action;
-        }
-
-        public void SetRightButtonListener(Action action)
-        {
-            _onRightButtonClick = action;
         }
     
         public void SetDate(DateTime date)
