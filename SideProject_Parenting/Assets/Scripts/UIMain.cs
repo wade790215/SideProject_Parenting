@@ -9,6 +9,7 @@ namespace Parenting
         [SerializeField] private GameObject downBarButtonPrefab;
         [SerializeField] private Transform downBarButtonParent;
         [SerializeField] private DownBarButtonConfigList configList;
+        [SerializeField] private DataView dataView;
 
         private List<DownBarButton> _downBarButtons = new();
 
@@ -17,12 +18,7 @@ namespace Parenting
             foreach (var config in configList.buttons)
             {
                 var button = Instantiate(downBarButtonPrefab, downBarButtonParent).GetComponent<DownBarButton>();
-
-#if ENABLE_ADDRESSABLES
-                button.SetData(config.addressableKey, config.label);
-#else
                 button.SetData(config.icon, config.label);
-#endif
                 button.AddListener(() => Debug.Log($"點擊：{config.label}"));
                 _downBarButtons.Add(button);
             }
