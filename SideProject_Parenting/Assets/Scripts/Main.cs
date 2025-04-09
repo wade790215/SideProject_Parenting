@@ -5,7 +5,7 @@ namespace Parenting
 {
     public class Main : MonoBehaviour
     {
-        private void Start()
+        private void Awake()
         {
             UIPage.ShowPage<UIMainPage>();
         }
