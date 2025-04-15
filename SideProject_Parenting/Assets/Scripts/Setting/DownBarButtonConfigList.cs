@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Parenting
+namespace Parenting.Scripts.Setting
 {
     [CreateAssetMenu(fileName = "DownBarButtonConfigList", menuName = "UI/DownBarButtonConfig List")]
     public class DownBarButtonConfigList : ScriptableObject

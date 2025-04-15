@@ -1,7 +1,8 @@
+using Parenting.Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Parenting
+namespace Parenting.Scripts
 {
     public class MainInfoView : MonoBehaviour
     {

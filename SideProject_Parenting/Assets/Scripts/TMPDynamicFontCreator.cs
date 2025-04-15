@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.TextCore.LowLevel;
 
-namespace Parenting
+namespace Parenting.Scripts
 {
     public class TMPChineseFontCreator : MonoBehaviour
     {

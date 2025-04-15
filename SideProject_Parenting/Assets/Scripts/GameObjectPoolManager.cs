@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace Parenting
+namespace Parenting.Scripts
 {
     public class GameObjectPoolManager : MonoBehaviour
     {

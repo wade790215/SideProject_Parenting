@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Parenting
+namespace Parenting.Scripts
 {
     public class DataView : MonoBehaviour
     {

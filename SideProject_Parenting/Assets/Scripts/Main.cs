@@ -1,7 +1,7 @@
 using MyPackages.UIFramework.Runtime;
 using UnityEngine;
 
-namespace Parenting
+namespace Parenting.Scripts
 {
     public class Main : MonoBehaviour
     {

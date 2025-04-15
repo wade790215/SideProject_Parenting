@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using Parenting.Scripts.Setting;
 using UnityEngine;
 
-namespace Parenting
+namespace Parenting.Scripts
 {
     public class UIMain : MonoBehaviour
     {

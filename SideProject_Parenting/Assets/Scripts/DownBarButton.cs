@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Parenting
+namespace Parenting.Scripts
 {
     public class DownBarButton : MonoBehaviour
     {
