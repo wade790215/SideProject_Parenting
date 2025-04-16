@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using MyPackages.UIFramework.Runtime;
 using Parenting.Scripts.Setting;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ namespace Parenting.Scripts
             {
                 var button = Instantiate(downBarButtonPrefab, downBarButtonParent).GetComponent<DownBarButton>();
                 button.SetData(config.icon, config.label);
-                button.AddListener(() => Debug.Log($"點擊：{config.label}"));
+                button.AddListener(() => UIPage.ShowPage<DownBarPopupPage>(config.label));
                 _downBarButtons.Add(button);
             }
         }
