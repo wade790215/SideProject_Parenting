@@ -14,3 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: "\u74F6\u9935"
   icon: {fileID: 21300000, guid: ab2ca8e3db56b0a41852974b24c2561b, type: 3}
+  popupPageConfigs:
+  - title: "\u985E\u578B"
+    itemType: 1
+  - title: "\u4EFD\u91CF"
+    itemType: 2
+  - title: "\u6642\u9593"
+    itemType: 0
