@@ -10,11 +10,10 @@ namespace Parenting.Scripts
             uiPath = "Prefab/DownBarPopup";
         }
 
-        protected override void Active()
+        protected override void Refresh()
         {
             //TODO 打開時塞入資料?
             Debug.Log($"Data_:{data}");
-            
         }
     }
 }
