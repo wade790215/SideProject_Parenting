@@ -7,7 +7,14 @@ namespace Parenting.Scripts
     {
         private void Awake()
         {
+            InitPage();
+        }
+
+        private void InitPage()
+        {
             UIPage.ShowPage<UIMainPage>();
+            UIPage.ShowPage<DownBarPopupPage>();
+            UIPage.ClosePage<DownBarPopupPage>();
         }
     }
 }

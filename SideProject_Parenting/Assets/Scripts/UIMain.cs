@@ -20,7 +20,7 @@ namespace Parenting.Scripts
             {
                 var button = Instantiate(downBarButtonPrefab, downBarButtonParent).GetComponent<DownBarButton>();
                 button.SetData(config.icon, config.label);
-                button.AddListener(() => UIPage.ShowPage<DownBarPopupPage>(config.label));
+                button.AddListener(() => UIPage.ShowPage<DownBarPopupPage>(JsonUtility.ToJson(config.ToData())));
                 _downBarButtons.Add(button);
             }
         }

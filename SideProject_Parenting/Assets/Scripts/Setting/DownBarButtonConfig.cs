@@ -8,11 +8,35 @@ namespace Parenting.Scripts.Setting
     public class DownBarButtonConfig : ScriptableObject
     {
         public string label;
+        public string[] options;
+        public InputFieldData inputFieldData;
         public Sprite icon;
         public List<PopupPageConfig> popupPageConfigs;
-        //TODO 需要Dropdown的內容會不一樣
-        //TODO 需要InputField的單位不一樣
-        //TODO 時間大家都依樣
+        
+        public DownBarButtonData ToData()
+        {
+            return new DownBarButtonData
+            {
+                label = label,
+                iconName = icon != null ? icon.name : "",
+                options = options,
+                inputFieldData = inputFieldData,
+                popupPageConfigs = new List<PopupPageConfig>(popupPageConfigs)
+            };
+        }
+    }
+    
+    /// <summary>
+    /// 因為ScriptablelObject不能直接轉Json，所以用這個來轉
+    /// </summary>
+    [Serializable]
+    public class DownBarButtonData
+    {
+        public string label;
+        public string iconName;
+        public string[] options;
+        public InputFieldData inputFieldData;
+        public List<PopupPageConfig> popupPageConfigs;
     }
     
     [Serializable]
@@ -20,6 +44,13 @@ namespace Parenting.Scripts.Setting
     {
         public string title;
         public PopupInfoItemType itemType;
+    }
+
+    [Serializable]
+    public class InputFieldData
+    {
+        public string defaultValue;
+        public string unit;
     }
 
     public enum PopupInfoItemType

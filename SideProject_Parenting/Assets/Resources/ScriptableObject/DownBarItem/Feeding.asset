@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Feeding
   m_EditorClassIdentifier: 
   label: "\u74F6\u9935"
+  options:
+  - "\u6BCD\u5976"
+  - "\u914D\u65B9\u5976"
+  inputFieldData:
+    defaultValue: 100
+    unit: "\u6BEB\u5347"
   icon: {fileID: 21300000, guid: ab2ca8e3db56b0a41852974b24c2561b, type: 3}
   popupPageConfigs:
   - title: "\u985E\u578B"
