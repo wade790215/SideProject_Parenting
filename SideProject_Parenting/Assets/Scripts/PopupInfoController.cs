@@ -25,6 +25,7 @@ namespace Parenting.Scripts
             {
                 var infoItem = Instantiate(popupInfoItemPrefab, popupScrollRect.content).GetComponent<PopupInfoItem>();
                 string displayValue = GetInitialValue(data,config.itemType);
+                infoItem.SetInfoItemData(config);
                 infoItem.SetDisplayValue(config.title, displayValue);
             }
         }
