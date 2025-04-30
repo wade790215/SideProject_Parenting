@@ -1,4 +1,5 @@
 using System;
+using MyPackages.UIFramework.Runtime;
 using Parenting.Scripts.Setting;
 using TMPro;
 using UnityEngine;
@@ -48,10 +49,10 @@ namespace Parenting.Scripts
             switch (_itemType)
             {
                 case PopupInfoItemType.Time:
-                    _time.SetActive(!_time.activeSelf);
+                    UIPage.ShowPage<TimePopupPage>();
                     break;
                 case PopupInfoItemType.InputField:
-                    _inputField.SetActive(!_inputField.activeSelf);
+                    UIPage.ShowPage<CapacityPopupPage>();
                     break;
                 case PopupInfoItemType.Dropdown:
                     _dropdown.SetActive(!_dropdown.activeSelf);
