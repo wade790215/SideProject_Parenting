@@ -16,7 +16,7 @@ namespace Parenting.Scripts
 
         private void Awake()
         {
-            downBarCloseButton.onClick.AddListener(UIPage.ClosePage<DownBarPopupPage>);
+            downBarCloseButton.onClick.AddListener(UIPage.ClosePage);
         }
 
         public void Init(DownBarButtonData data)

@@ -14,8 +14,6 @@ namespace Parenting.Scripts
         [SerializeField] private TextMeshProUGUI _btnTxt;
         [SerializeField] private TextMeshProUGUI _title;
         [SerializeField] private GameObject _dropdown;
-        [SerializeField] private GameObject _inputField;
-        [SerializeField] private GameObject _time;
 
         private Action _onClickEvent;
 
