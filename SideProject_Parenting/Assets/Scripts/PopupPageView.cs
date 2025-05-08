@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Parenting.Scripts.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,24 +25,26 @@ namespace Parenting.Scripts
             cancelButton.onClick.RemoveAllListeners();
         }
         
-        public Dictionary<string, string> GetInputFieldValues()
+        public List<InputFieldData> GetInputFieldData()
         {
-            var inputFieldValues = new Dictionary<string, string>();
-            foreach (var inputFieldData in inputFieldTMP)
+            List<InputFieldData> inputFieldDataList = new();
+            foreach (var inputField in inputFieldTMP)
             {
-                if (inputFieldData.inputField != null)
+                InputFieldData data = new()
                 {
-                    inputFieldValues[inputFieldData.key] = inputFieldData.inputField.text;
-                }
+                    key = inputField.key,
+                    inputField = inputField.inputField
+                };
+                inputFieldDataList.Add(data);
             }
-            return inputFieldValues;
+            return inputFieldDataList;
         }
     }
     
     [Serializable]
     public class InputFieldData
     {
-        public string key;
+        public EnumTable.InputFieldKey key;
         public TMP_InputField inputField;
     }
 }

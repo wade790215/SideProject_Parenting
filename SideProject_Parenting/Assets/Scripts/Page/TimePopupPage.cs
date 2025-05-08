@@ -14,6 +14,10 @@ namespace Parenting.Scripts
         protected override void Awake(GameObject go)
         {
             _view = go.GetComponent<PopupPageView>();
+            _view.GetInputFieldData().ForEach(data =>
+            {
+                InputFieldManager.Instance.RegisterInputField(data.key, data.inputField);
+            });
         }
         
         protected override void Active()
