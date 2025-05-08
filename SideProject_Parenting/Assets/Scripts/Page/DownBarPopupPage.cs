@@ -17,7 +17,6 @@ namespace Parenting.Scripts
         {
             base.Awake(go);
             _popupInfoController = go.GetComponent<PopupInfoController>();
-            
         }
 
         protected override void Refresh()
@@ -29,6 +28,21 @@ namespace Parenting.Scripts
                 {
                     _popupInfoController.Init(result);
                 }
+            }
+        }
+
+        protected override void Active()
+        {
+            base.Active();
+            _popupInfoController.AddCloseListener(()=>ClosePage(typeof(DownBarPopupPage).ToString()));
+        }
+
+        protected override void Hide()
+        {
+            base.Hide();
+            if (_popupInfoController != null)
+            {
+                _popupInfoController.RemoveAllListeners();
             }
         }
     }

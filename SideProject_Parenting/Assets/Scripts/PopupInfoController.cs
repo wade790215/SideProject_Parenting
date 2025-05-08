@@ -14,17 +14,19 @@ namespace Parenting.Scripts
         [SerializeField] private ScrollRect popupScrollRect;
         [SerializeField] private Button downBarCloseButton;
 
-        private void Awake()
+        public void AddCloseListener(Action action) => downBarCloseButton.onClick.AddListener(() => action?.Invoke());
+        public void RemoveAllListeners()
         {
-            downBarCloseButton.onClick.AddListener(UIPage.ClosePage);
+            downBarCloseButton.onClick.RemoveAllListeners();
         }
-
+        
         public void Init(DownBarButtonData data)
         {
+            
             foreach (var config in data.popupPageConfigs)
             {
                 var infoItem = Instantiate(popupInfoItemPrefab, popupScrollRect.content).GetComponent<PopupInfoItem>();
-                string displayValue = GetInitialValue(data,config.itemType);
+                string displayValue = GetInitialValue(data, config.itemType);
                 infoItem.SetInfoItemData(config);
                 infoItem.SetDisplayValue(config.title, displayValue);
             }
