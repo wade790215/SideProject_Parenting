@@ -1,4 +1,5 @@
 using System;
+using Parenting.Scripts.Setting;
 using UnityEngine;
 using UnityEngine.UI;
 

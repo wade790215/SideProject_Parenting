@@ -22,7 +22,6 @@ namespace Parenting.Scripts
         
         public void Init(DownBarButtonData data)
         {
-            
             foreach (var config in data.popupPageConfigs)
             {
                 var infoItem = Instantiate(popupInfoItemPrefab, popupScrollRect.content).GetComponent<PopupInfoItem>();

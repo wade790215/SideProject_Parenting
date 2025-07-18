@@ -19,18 +19,6 @@ namespace Parenting.Scripts
             _popupInfoController = go.GetComponent<PopupInfoController>();
         }
 
-        protected override void Refresh()
-        {
-            if (data != null)
-            {
-                var result = JsonUtility.FromJson<DownBarButtonData>(data.ToString());
-                if (result != null)
-                {
-                    _popupInfoController.Init(result);
-                }
-            }
-        }
-
         protected override void Active()
         {
             base.Active();
