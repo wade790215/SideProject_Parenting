@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dbe8281ddce4a4a857fb3dd88a6c3e, type: 3}
   m_Name: DownBarButtonConfigList
   m_EditorClassIdentifier: 
-  buttons:
+  downBarButtonConfigs:
   - {fileID: 11400000, guid: dafba46546d2d5a49b8c1d62cc5efa3d, type: 2}
-  - {fileID: 11400000, guid: 4e4586b510b9d3d4b9a5dce6a05bbd22, type: 2}
-  - {fileID: 11400000, guid: 3bc30c6c64d3ac643b2411f72de59508, type: 2}
-  - {fileID: 11400000, guid: e51e52ed956434944b2db1f0f29833dd, type: 2}
-  - {fileID: 11400000, guid: 08ae6f3d5e1f5a844b5f636a8448ffb8, type: 2}
   - {fileID: 11400000, guid: 572588969a93e114b9c0d903f2402788, type: 2}
   - {fileID: 11400000, guid: e1ef0561f669bd24fab37b1f4769ced6, type: 2}
+  - {fileID: 11400000, guid: 3bc30c6c64d3ac643b2411f72de59508, type: 2}
+  - {fileID: 11400000, guid: 4e4586b510b9d3d4b9a5dce6a05bbd22, type: 2}
+  - {fileID: 11400000, guid: 08ae6f3d5e1f5a844b5f636a8448ffb8, type: 2}
+  - {fileID: 11400000, guid: e51e52ed956434944b2db1f0f29833dd, type: 2}

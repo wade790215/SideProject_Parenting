@@ -17,6 +17,7 @@ namespace Parenting.Scripts
         {
             base.Awake(go);
             _popupInfoController = go.GetComponent<PopupInfoController>();
+            _popupInfoController.Init();
         }
 
         protected override void Active()

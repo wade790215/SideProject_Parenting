@@ -11,16 +11,14 @@ namespace Parenting.Scripts
         [SerializeField] private Transform downBarButtonParent;
         [SerializeField] private DownBarButtonConfigList configList;
         [SerializeField] private DataView dataView;
-        [SerializeField] private PopupInfoController popupInfoController;
 
         private List<DownBarButton> _downBarButtons = new();
 
         public void Init()
         {
-            foreach (var config in configList.buttons)
+            foreach (var config in configList.downBarButtonConfigs)
             {
                 var button = Instantiate(downBarButtonPrefab, downBarButtonParent).GetComponent<DownBarButton>();
-                popupInfoController.Init(config.ToData());
                 button.SetData(config.icon, config.label);
                 button.AddListener(UIPage.ShowPage<DownBarPopupPage>);
                 _downBarButtons.Add(button);

@@ -194,6 +194,7 @@ MonoBehaviour:
   popupInfoItemPrefab: {fileID: 4434569087577581198, guid: 3a071663e88514b40a59c96deb7a8049, type: 3}
   popupScrollRect: {fileID: 8863370536077366220}
   downBarCloseButton: {fileID: 8801824704022400187}
+  configList: {fileID: 11400000, guid: 23a0c6f2f0a38d4419a541b8d440b248, type: 2}
 --- !u!1 &876392408751023092
 GameObject:
   m_ObjectHideFlags: 0

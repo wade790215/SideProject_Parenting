@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using MyPackages.UIFramework.Runtime;
 using Parenting.Scripts.Setting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +11,7 @@ namespace Parenting.Scripts
         [SerializeField] private GameObject popupInfoItemPrefab;
         [SerializeField] private ScrollRect popupScrollRect;
         [SerializeField] private Button downBarCloseButton;
+        [SerializeField] private DownBarButtonConfigList configList;
 
         public void AddCloseListener(Action action) => downBarCloseButton.onClick.AddListener(() => action?.Invoke());
         public void RemoveAllListeners()
@@ -20,14 +19,18 @@ namespace Parenting.Scripts
             downBarCloseButton.onClick.RemoveAllListeners();
         }
         
-        public void Init(DownBarButtonData data)
+        public void Init()
         {
-            foreach (var config in data.popupPageConfigs)
+            foreach (var config in configList.downBarButtonConfigs)
             {
-                var infoItem = Instantiate(popupInfoItemPrefab, popupScrollRect.content).GetComponent<PopupInfoItem>();
-                string displayValue = GetInitialValue(data, config.itemType);
-                infoItem.SetInfoItemData(config);
-                infoItem.SetDisplayValue(config.title, displayValue);
+                var data = config.ToData();
+                foreach (var pageConfig in data.popupPageConfigs)
+                {
+                    var infoItem = Instantiate(popupInfoItemPrefab, popupScrollRect.content).GetComponent<PopupInfoItem>();
+                    string displayValue = GetInitialValue(data, pageConfig.itemType);
+                    infoItem.SetInfoItemData(pageConfig);
+                    infoItem.SetDisplayValue(pageConfig.title, displayValue); 
+                }
             }
         }
 
