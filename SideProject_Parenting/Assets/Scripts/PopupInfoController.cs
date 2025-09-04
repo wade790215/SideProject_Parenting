@@ -14,10 +14,7 @@ namespace Parenting.Scripts
         [SerializeField] private DownBarButtonConfigList configList;
 
         public void AddCloseListener(Action action) => downBarCloseButton.onClick.AddListener(() => action?.Invoke());
-        public void RemoveAllListeners()
-        {
-            downBarCloseButton.onClick.RemoveAllListeners();
-        }
+        public void RemoveAllListeners() =>downBarCloseButton.onClick.RemoveAllListeners();
         
         public void Init()
         {
