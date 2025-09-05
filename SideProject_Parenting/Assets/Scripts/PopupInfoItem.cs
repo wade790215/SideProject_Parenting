@@ -42,6 +42,12 @@ namespace Parenting.Scripts
             _itemType = config.itemType;
         }
 
+        public void ActiveUIByType()
+        {
+            if(_itemType == PopupInfoItemType.Dropdown)
+                _button.gameObject.SetActive(false);
+        }
+
         private void ToggleActiveByType()
         {
             switch (_itemType)
@@ -53,9 +59,13 @@ namespace Parenting.Scripts
                     UIPage.ShowPage<CapacityPopupPage>();
                     break;
                 case PopupInfoItemType.Dropdown:
-                    _dropdown.SetActive(!_dropdown.activeSelf);
                     break;
             }
+        }
+
+        public void ResetView()
+        {
+            throw new NotImplementedException();
         }
     }
 }
